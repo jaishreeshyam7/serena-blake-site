@@ -1,6 +1,9 @@
 
+'use client'
+
 import { Button } from "@/components/ui/button";
 import { Phone, Mail } from "lucide-react";
+import Image from "next/image";
 
 const Hero = () => {
   const scrollToContact = () => {
@@ -61,10 +64,13 @@ const Hero = () => {
           {/* Image */}
           <div className="relative animate-fade-in delay-300">
             <div className="relative z-10">
-              <img
+              <Image
                 src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
                 alt="Dr. Serena Blake - Clinical Psychologist"
                 className="rounded-2xl shadow-2xl w-full max-w-md mx-auto object-cover aspect-[4/5]"
+                width={400}
+                height={500}
+                priority
               />
             </div>
             <div className="absolute inset-0 bg-blue-200 rounded-2xl transform rotate-3 scale-95 -z-10"></div>
