@@ -5,6 +5,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { ChevronDown, HelpCircle } from "lucide-react";
 
 const FAQ = () => {
   const faqs = [
@@ -53,22 +54,32 @@ const FAQ = () => {
             <div className="w-24 h-1 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 mx-auto mt-4 rounded animate-pulse"></div>
           </div>
 
-          <Accordion type="single" collapsible className="space-y-4">
+          <Accordion type="single" collapsible className="space-y-6">
             {faqs.map((faq, index) => (
               <AccordionItem 
                 key={index} 
                 value={`item-${index}`}
-                className="border-0 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover-lift glass-effect bg-gradient-to-r from-white/90 via-blue-50/20 to-purple-50/20 relative overflow-hidden group"
+                className="border-0 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 hover-lift glass-effect bg-gradient-to-r from-white/95 via-blue-50/30 to-purple-50/30 relative overflow-hidden group data-[state=open]:bg-gradient-to-r data-[state=open]:from-blue-50/80 data-[state=open]:via-white/95 data-[state=open]:to-purple-50/80"
               >
-                {/* Decorative elements */}
-                <div className="absolute top-3 right-3 w-8 h-8 bg-gradient-to-r from-blue-400/10 to-purple-400/10 rounded-full blur-sm group-hover:opacity-30 transition-opacity duration-300"></div>
-                <div className="absolute bottom-3 left-3 w-6 h-6 bg-gradient-to-r from-emerald-400/10 to-cyan-400/10 rounded-full blur-sm group-hover:opacity-30 transition-opacity duration-300"></div>
+                {/* Enhanced decorative elements */}
+                <div className="absolute top-4 right-4 w-10 h-10 bg-gradient-to-r from-blue-400/15 to-purple-400/15 rounded-full blur-sm group-hover:opacity-40 transition-opacity duration-300 group-data-[state=open]:opacity-50"></div>
+                <div className="absolute bottom-4 left-4 w-8 h-8 bg-gradient-to-r from-emerald-400/15 to-cyan-400/15 rounded-full blur-sm group-hover:opacity-40 transition-opacity duration-300 group-data-[state=open]:opacity-50"></div>
                 
-                <AccordionTrigger className="text-left text-lg font-medium text-gray-900 py-6 px-6 hover:text-blue-800 transition-colors duration-300 relative z-10">
-                  {faq.question}
+                {/* Enhanced status indicator */}
+                <div className="absolute left-2 top-1/2 transform -translate-y-1/2 w-1 h-8 bg-gradient-to-b from-blue-500 to-purple-500 rounded-full opacity-0 group-data-[state=open]:opacity-100 transition-opacity duration-300"></div>
+                
+                <AccordionTrigger className="text-left text-lg font-semibold text-gray-900 py-6 px-6 hover:text-blue-800 transition-all duration-300 relative z-10 group-data-[state=open]:text-blue-700 [&[data-state=open]>svg]:rotate-180 flex items-center justify-between hover:no-underline">
+                  <div className="flex items-center gap-3">
+                    <HelpCircle className="h-5 w-5 text-blue-600 group-data-[state=open]:text-blue-700 flex-shrink-0" />
+                    <span>{faq.question}</span>
+                  </div>
+                  <ChevronDown className="h-5 w-5 text-blue-600 transition-transform duration-300 flex-shrink-0" />
                 </AccordionTrigger>
-                <AccordionContent className="text-gray-700 text-base leading-relaxed pb-6 px-6 relative z-10">
-                  {faq.answer}
+                
+                <AccordionContent className="text-gray-700 text-base leading-relaxed pb-6 px-6 pl-14 relative z-10 data-[state=open]:animate-in data-[state=open]:slide-in-from-top-2 data-[state=closed]:animate-out data-[state=closed]:slide-out-to-top-2">
+                  <div className="border-l-2 border-blue-200 pl-4 py-2">
+                    {faq.answer}
+                  </div>
                 </AccordionContent>
               </AccordionItem>
             ))}
