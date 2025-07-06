@@ -1,5 +1,6 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import Image from "next/image";
 
 const Services = () => {
   const services = [
@@ -9,7 +10,8 @@ const Services = () => {
       features: ["Cognitive Behavioral Therapy", "Mindfulness Techniques", "Relaxation Training", "Stress Reduction Strategies"],
       price: "$200",
       gradient: "from-blue-500/10 to-cyan-500/10",
-      iconColor: "from-blue-500 to-cyan-500"
+      iconColor: "from-blue-500 to-cyan-500",
+      icon: "/images/services/anxiety-icon.svg"
     },
     {
       title: "Relationship Counseling",
@@ -17,7 +19,8 @@ const Services = () => {
       features: ["Communication Skills", "Conflict Resolution", "Intimacy Building", "Couples Therapy"],
       price: "$240",
       gradient: "from-purple-500/10 to-pink-500/10",
-      iconColor: "from-purple-500 to-pink-500"
+      iconColor: "from-purple-500 to-pink-500",
+      icon: "/images/services/relationship-icon.svg"
     },
     {
       title: "Trauma Recovery",
@@ -25,7 +28,8 @@ const Services = () => {
       features: ["Trauma-Informed Care", "EMDR Therapy", "Somatic Approaches", "Post-Traumatic Growth"],
       price: "$200",
       gradient: "from-emerald-500/10 to-orange-500/10",
-      iconColor: "from-emerald-500 to-orange-500"
+      iconColor: "from-emerald-500 to-orange-500",
+      icon: "/images/services/trauma-icon.svg"
     }
   ];
 
@@ -59,9 +63,20 @@ const Services = () => {
                 <div className={`absolute bottom-4 left-4 w-8 h-8 bg-gradient-to-r ${service.iconColor} opacity-10 rounded-full blur-sm group-hover:opacity-20 transition-opacity duration-300`}></div>
                 
                 <CardHeader className="pb-4 relative z-10">
-                  <CardTitle className="text-xl text-gray-900 mb-2 group-hover:text-blue-800 transition-colors duration-300">
-                    {service.title}
-                  </CardTitle>
+                  <div className="flex items-center mb-4">
+                    <div className="relative w-16 h-16 mr-4 hover:scale-110 transition-transform duration-300">
+                      <Image
+                        src={service.icon}
+                        alt={`${service.title} icon`}
+                        width={64}
+                        height={64}
+                        className="object-contain filter group-hover:brightness-110 transition-all duration-300"
+                      />
+                    </div>
+                    <CardTitle className="text-xl text-gray-900 group-hover:text-blue-800 transition-colors duration-300">
+                      {service.title}
+                    </CardTitle>
+                  </div>
                   <CardDescription className="text-gray-600 text-base leading-relaxed">
                     {service.description}
                   </CardDescription>

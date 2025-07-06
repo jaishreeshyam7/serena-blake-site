@@ -4,6 +4,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Phone, Mail, Calendar } from "lucide-react";
+import Image from "next/image";
 
 const Contact = () => {
   return (
@@ -117,18 +118,34 @@ const Contact = () => {
               <Card className="bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-600 text-white border-0 shadow-lg hover-lift relative overflow-hidden group">
                 <div className="absolute inset-0 bg-pattern-dots opacity-20 group-hover:opacity-30 transition-opacity duration-300"></div>
                 <div className="absolute top-4 right-4 w-16 h-16 bg-gradient-to-r from-white/10 to-cyan-300/20 rounded-full blur-xl group-hover:animate-pulse"></div>
-                <CardContent className="p-8 text-center relative z-10">
-                  <h3 className="text-2xl font-bold mb-4">Ready to Begin?</h3>
-                  <p className="mb-6 text-blue-100">
-                    Take the first step towards positive change. Contact me today to schedule your consultation.
-                  </p>
-                  <Button
-                    size="lg"
-                    className="bg-gradient-to-r from-white to-blue-50 text-blue-600 hover:from-blue-50 hover:to-purple-50 px-8 py-6 text-lg font-semibold transition-all duration-300 hover:scale-105 neon-glow"
-                    onClick={() => window.open('tel:3235550192')}
-                  >
-                    Schedule Consultation
-                  </Button>
+                <CardContent className="p-8 relative z-10">
+                  <div className="flex flex-col md:flex-row items-center gap-6">
+                    {/* Consultation Image */}
+                    <div className="relative group-hover:scale-105 transition-transform duration-300">
+                      <Image
+                        src="/images/office/consultation.svg"
+                        alt="Consultation - taking the first step"
+                        width={150}
+                        height={100}
+                        className="object-contain opacity-90 group-hover:opacity-100 transition-opacity duration-300"
+                      />
+                    </div>
+                    
+                    {/* Text Content */}
+                    <div className="text-center md:text-left flex-1">
+                      <h3 className="text-2xl font-bold mb-4">Ready to Begin?</h3>
+                      <p className="mb-6 text-blue-100">
+                        Take the first step towards positive change. Contact me today to schedule your consultation.
+                      </p>
+                      <Button
+                        size="lg"
+                        className="bg-gradient-to-r from-white to-blue-50 text-blue-600 hover:from-blue-50 hover:to-purple-50 px-8 py-6 text-lg font-semibold transition-all duration-300 hover:scale-105 neon-glow"
+                        onClick={() => window.open('tel:3235550192')}
+                      >
+                        Schedule Consultation
+                      </Button>
+                    </div>
+                  </div>
                 </CardContent>
               </Card>
 

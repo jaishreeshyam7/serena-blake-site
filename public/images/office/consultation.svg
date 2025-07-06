@@ -1,0 +1,38 @@
+<svg width="300" height="200" viewBox="0 0 300 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="consultGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FDF2F8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#F0FDF4;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="calmGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:0.1" />
+      <stop offset="100%" style="stop-color:#8B5CF6;stop-opacity:0.05" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="300" height="200" fill="url(#consultGrad)"/>
+  <circle cx="150" cy="100" r="120" fill="url(#calmGrad)"/>
+  
+  <!-- Two figures in conversation (abstract) -->
+  <circle cx="100" cy="80" r="20" fill="#3B82F6" opacity="0.3"/>
+  <rect x="85" y="100" width="30" height="40" fill="#3B82F6" opacity="0.2" rx="15"/>
+  
+  <circle cx="200" cy="80" r="20" fill="#8B5CF6" opacity="0.3"/>
+  <rect x="185" y="100" width="30" height="40" fill="#8B5CF6" opacity="0.2" rx="15"/>
+  
+  <!-- Connection/communication waves -->
+  <path d="M120 90C130 85 140 95 150 90C160 85 170 95 180 90" 
+        stroke="#10B981" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.6"/>
+  <path d="M125 100C135 95 145 105 155 100C165 95 175 105 175 100" 
+        stroke="#06B6D4" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.5"/>
+  
+  <!-- Peaceful elements -->
+  <circle cx="50" cy="150" r="8" fill="#10B981" opacity="0.4"/>
+  <circle cx="250" cy="150" r="6" fill="#F59E0B" opacity="0.4"/>
+  <circle cx="150" cy="160" r="10" fill="#EC4899" opacity="0.3"/>
+  
+  <!-- Text representation -->
+  <rect x="120" y="170" width="60" height="2" fill="#6B7280" opacity="0.4" rx="1"/>
+  <rect x="130" y="175" width="40" height="2" fill="#6B7280" opacity="0.3" rx="1"/>
+</svg>
