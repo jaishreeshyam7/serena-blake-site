@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/toaster"
 import { Toaster as Sonner } from "@/components/ui/sonner"
 import { TooltipProvider } from "@/components/ui/tooltip"
 import { ReactQueryProvider } from "@/components/providers/react-query-provider"
+import Header from "@/components/Header"
 import React from 'react'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -32,6 +33,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <ReactQueryProvider>
           <TooltipProvider>
+            <Header />
             <Toaster />
             <Sonner />
             {children}
