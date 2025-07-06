@@ -24,14 +24,6 @@ const FAQ = () => {
     {
       question: "How long are therapy sessions?",
       answer: "Individual therapy sessions are 50 minutes long, while couples sessions are 60 minutes. This allows adequate time to explore issues deeply while maintaining a structured therapeutic framework."
-    },
-    {
-      question: "How often should I attend sessions?",
-      answer: "Most clients benefit from weekly sessions initially. As progress is made, we may adjust to bi-weekly or monthly sessions based on your needs and therapeutic goals. We'll discuss what frequency works best for your situation."
-    },
-    {
-      question: "What should I expect in the first session?",
-      answer: "The first session focuses on understanding your concerns, history, and goals for therapy. We'll discuss confidentiality, treatment approaches, and develop an initial plan. It's normal to feel nervous - my goal is to create a comfortable, non-judgmental space."
     }
   ];
 
